@@ -10,6 +10,7 @@ from fastai.learner import load_learner
 import io
 import base64
 from fastapi.middleware.cors import CORSMiddleware
+import os
 
 app = FastAPI()
 # Allow CORS for your React frontend
@@ -49,5 +50,12 @@ async def predict_image(request: dict):
     
     except Exception as e:
         return JSONResponse(content={"error": str(e)}, status_code=400)
+    
+@app.get("/")
+def home():
+    return {"message": "FastAPI is running!"}
 
+if __name__ == "__main__":
+    import uvicorn
+    uvicorn.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
 # To run: uvicorn app:app --reload
