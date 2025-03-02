@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+pillow
+fastai
+python-multipart  # Required if handling form-data images
