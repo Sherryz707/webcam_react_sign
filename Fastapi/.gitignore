@@ -1,0 +1,15 @@
+# Ignore for FastAPI
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv/
+.env
+.DS_Store
+
+# General
+*.log
+*.swp
+.vscode/
+.idea/
